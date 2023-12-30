@@ -46,9 +46,15 @@
           }
         },
         "test": {
-          "builder": "@analogjs/platform:vitest"
+          "builder": "@analogjs/platform:vitest",
+          "options": {
+            "coverage": true
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

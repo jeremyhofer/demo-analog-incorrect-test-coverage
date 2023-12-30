@@ -19,6 +19,13 @@ export default defineConfig(({ mode }) => ({
     setupFiles: ['src/test.ts'],
     include: ['**/*.spec.ts'],
     reporters: ['default'],
+    coverage: {
+      include: ['src/app/**/*.ts', 'src/server/**/*.ts'],
+      exclude: ['src/app/app.config.**', '**/*types.ts'],
+      all: true,
+      reportsDirectory: './coverage',
+      provider: 'v8',
+    },
   },
   define: {
     'import.meta.vitest': mode !== 'production',
